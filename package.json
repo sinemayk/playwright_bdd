@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "bdd": "bddgen && playwright test",
+    "smoke": "bddgen && playwright test --grep \"@smoke\"",
+    "login": "bddgen && playwright test --grep \"login\""
+  },
   "keywords": [],
   "type": "commonjs",
   "devDependencies": {
