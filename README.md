@@ -1,5 +1,9 @@
 # Playwright BDD Demo
 
+![Playwright Tests](https://github.com/sinemayk/playwright_bdd/actions/workflows/playwright.yml/badge.svg)
+
+📊 [Canlı Test Raporu](https://sinemayk.github.io/playwright_code/)
+
 A sample end-to-end test project that combines Playwright with BDD-style feature files and TypeScript step definitions. The repository demonstrates real-world automation patterns such as page objects, scenario-based testing, and cross-browser execution using Chromium, Firefox, and WebKit.
 
 ## Overview
