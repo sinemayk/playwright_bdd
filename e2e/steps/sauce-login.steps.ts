@@ -6,14 +6,20 @@ import { createBdd } from "playwright-bdd";
 import { SauceLoginPage } from "../pages/SauceLoginPage";
 
 const { Given, When, Then } = createBdd();
-
+const usernameMap: Record<string, string> = {
+  standard: process.env.SAUCE_DEMO_USERNAME_STANDARD!,
+  locked: process.env.SAUCE_DEMO_USERNAME_LOCKED!,
+  problem: process.env.SAUCE_DEMO_USERNAME_PROBLEM!,
+};
 let sauceLoginPage: SauceLoginPage;
 
 Given("kullanici login sayfasindadir", async ({ page }) => {
   sauceLoginPage = new SauceLoginPage(page);
   await sauceLoginPage.goto();
 });
-When("kullanici adi {string} girer", async ({ page }, kullaniciAdi: string) => {
+
+When("kullanici adi {string} turunde girer", async ({ page }, kullaniciTuru: string) => {
+  const kullaniciAdi = usernameMap[kullaniciTuru];
   await sauceLoginPage.fillUserName(kullaniciAdi);
 });
 
