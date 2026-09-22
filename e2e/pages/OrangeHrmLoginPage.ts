@@ -5,7 +5,7 @@ export class OrangeHrmLoginPage {
 
   async goto(): Promise<void> {
     await this.page.goto(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+      process.env.OPENSOURCE_URL!,
     );
   }
 

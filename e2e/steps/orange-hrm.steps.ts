@@ -11,7 +11,7 @@ Given("kullanici login sayfasina gider", async ({ page }) => {
 });
 
 When("gecerli kullanici adi ve sifre girer", async ({ page }) => {
-  await orangeHrmLoginPage.login("Admin", "admin123");
+  await orangeHrmLoginPage.login(process.env.OPENSOURCE_USERNAME!, process.env.OPENSOURCE_PASSWORD!);
 });
 
 When("logine tiklar", async ({ page }) => {
