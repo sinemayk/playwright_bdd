@@ -5,7 +5,7 @@ Feature: US001 Sauce Demo Login Test
 Scenario: TC01 Gecerli kullanici girisi
     Given kullanici login sayfasindadir
     When kullanici adi "standard" turunde girer
-    And sifre "sifre" girer
+    And sifre girer
     And login butonuna tiklar
     Then urunler sayfasi acilmalidir
 
@@ -13,7 +13,7 @@ Scenario: TC01 Gecerli kullanici girisi
 Scenario: TC02 Gecerli kullanici girisi
     Given kullanici login sayfasindadir
     When kullanici adi "error" turunde girer
-    And sifre "sifre" girer
+    And sifre girer
     And login butonuna tiklar
     Then urunler sayfasi acilmalidir
 
@@ -21,6 +21,6 @@ Scenario: TC02 Gecerli kullanici girisi
 Scenario: TC03 Gecerli kullanici girisi
     Given kullanici login sayfasindadir
     When kullanici adi "problem" turunde girer
-    And sifre "sifre" girer
+    And sifre girer
     And login butonuna tiklar
     Then urunler sayfasi acilmalidir

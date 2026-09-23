@@ -8,7 +8,7 @@ import { SauceLoginPage } from "../pages/SauceLoginPage";
 const { Given, When, Then } = createBdd();
 const usernameMap: Record<string, string> = {
   standard: process.env.SAUCE_DEMO_USERNAME_STANDARD!,
-  locked: process.env.SAUCE_DEMO_USERNAME_LOCKED!,
+  error: process.env.SAUCE_DEMO_USERNAME_ERROR!,
   problem: process.env.SAUCE_DEMO_USERNAME_PROBLEM!,
 };
 let sauceLoginPage: SauceLoginPage;
@@ -23,8 +23,8 @@ When("kullanici adi {string} turunde girer", async ({ page }, kullaniciTuru: str
   await sauceLoginPage.fillUserName(kullaniciAdi);
 });
 
-When("sifre {string} girer", async ({ page }, sifre: string) => {
-  await sauceLoginPage.fillPassword(sifre);
+When("sifre girer", async ({ page }) => {
+  await sauceLoginPage.fillPassword(process.env.SAUCE_DEMO_PASSWORD!);
 });
 
 When("login butonuna tiklar", async ({ page }) => {
