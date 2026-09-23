@@ -1,0 +1,50 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e\features\orange-hrm-login.feature.spec.js >> US002 Open Source Login >> TC01 Gecerli kullanici girisi
+- Location: .features-gen\e2e\features\orange-hrm-login.feature.spec.js:6:7
+
+# Error details
+
+```
+Error: page.goto: url: expected string, got undefined
+```
+
+# Test source
+
+```ts
+  1  | import { expect, Page } from "@playwright/test";
+  2  | 
+  3  | export class OrangeHrmLoginPage {
+  4  |   constructor(private page: Page) {}
+  5  | 
+  6  |   async goto(): Promise<void> {
+> 7  |     await this.page.goto(
+     |                     ^ Error: page.goto: url: expected string, got undefined
+  8  |       process.env.OPENSOURCE_URL!,
+  9  |     );
+  10 |   }
+  11 | 
+  12 |   async login(username: string, password: string): Promise<void> {
+  13 |     await this.page.getByPlaceholder("Username").fill(username);
+  14 |     await this.page.getByPlaceholder("Password").fill(password);
+  15 |   }
+  16 | 
+  17 |   async clickLogin(): Promise<void> {
+  18 |     await this.page.getByRole("button", { name: "Login" }).click();
+  19 |   }
+  20 | 
+  21 |   async verifySuccessfulLogin(): Promise<void> {
+  22 |     await expect(this.page).toHaveURL(/dashboard/);
+  23 |     await expect(
+  24 |       this.page.getByRole("heading", { name: "Dashboard" }),
+  25 |     ).toBeVisible();
+  26 |   }
+  27 | }
+  28 | 
+```
