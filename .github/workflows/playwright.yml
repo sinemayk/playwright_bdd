@@ -24,6 +24,10 @@ jobs:
           OPENSOURCE_URL: ${{ secrets.OPENSOURCE_URL }}
           OPENSOURCE_USERNAME: ${{ secrets.OPENSOURCE_USERNAME }}
           OPENSOURCE_PASSWORD: ${{ secrets.OPENSOURCE_PASSWORD }}
+          SAUCE_DEMO_USERNAME_STANDARD: ${{ secrets.SAUCE_DEMO_USERNAME_STANDARD }}
+          SAUCE_DEMO_USERNAME_ERROR: ${{ secrets.SAUCE_DEMO_USERNAME_ERROR }}
+          SAUCE_DEMO_USERNAME_PROBLEM: ${{ secrets.SAUCE_DEMO_USERNAME_PROBLEM }}
+          SAUCE_DEMO_PASSWORD: ${{ secrets.SAUCE_DEMO_PASSWORD }}
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
