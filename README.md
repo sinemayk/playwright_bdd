@@ -2,7 +2,7 @@
 
 ![Playwright Tests](https://github.com/sinemayk/playwright_bdd/actions/workflows/playwright.yml/badge.svg)
 
-📊 [Canlı Test Raporu](https://sinemayk.github.io/playwright_code/)
+📊 [Canlı Test Raporu](https://sinemayk.github.io/playwright_bdd/)
 
 A sample end-to-end test project that combines Playwright with BDD-style feature files and TypeScript step definitions. The repository demonstrates real-world automation patterns such as page objects, scenario-based testing, and cross-browser execution using Chromium, Firefox, and WebKit.
 
@@ -29,14 +29,18 @@ This project is designed to help learn and practice:
 
 ```text
 playwright_bdd/
+├── .github/workflows/
+│   └── playwright.yml
 ├── e2e/
 │   ├── features/
-│   │   └── saucelogin.feature
+│   │   ├── saucelogin.feature
+│   │   └── orange-hrm-login.feature
 │   ├── pages/
 │   │   ├── OrangeHrmLoginPage.ts
 │   │   └── SauceLoginPage.ts
 │   └── steps/
-│       └── sauce-login.steps.ts
+│       ├── sauce-login.steps.ts
+│       └── orange-hrm.steps.ts
 ├── playwright.config.ts
 ├── package.json
 ├── tsconfig.json
@@ -122,8 +126,8 @@ Feature: US001 Sauce Demo Login Test
 @TC01 @smoke
 Scenario: TC01 Gecerli kullanici girisi
     Given kullanici login sayfasindadir
-    When kullanici adi "standard_user" girer
-    And sifre "secret_sauce" girer
+    When kullanici adi "standard" turunde girer
+    And sifre girer
     And login butonuna tiklar
     Then urunler sayfasi acilmalidir
 ```
@@ -169,7 +173,11 @@ Then reinstall WebKit:
 ```bash
 npx playwright install --force webkit
 ```
-
+## İlgili Projeler
+Bu repo, üç parçalı bir Playwright öğrenme serisinin BDD/Gherkin odaklı parçasıdır.
+- [playwright_code](https://github.com/sinemayk/playwright_code) — Gelişmiş fixture/auth stratejileri ve API testleri
+- [playwright-pom](https://github.com/sinemayk/playwright-pom) — Page Object Model'in temiz bir uygulaması
+  
 ## License
 
 This project is intended for learning, demonstration, and personal test automation experiments.
