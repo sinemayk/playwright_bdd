@@ -173,10 +173,10 @@ Then reinstall WebKit:
 ```bash
 npx playwright install --force webkit
 ```
-## İlgili Projeler
-Bu repo, üç parçalı bir Playwright öğrenme serisinin BDD/Gherkin odaklı parçasıdır.
-- [playwright_code](https://github.com/sinemayk/playwright_code) — Gelişmiş fixture/auth stratejileri ve API testleri
-- [playwright-pom](https://github.com/sinemayk/playwright-pom) — Page Object Model'in temiz bir uygulaması
+## Related Projects
+This repo is the BDD/Gherkin-focused part of a three-part Playwright learning series.
+- [playwright_code](https://github.com/sinemayk/playwright_code) — Advanced fixture/auth strategies and API tests
+- [playwright-pom](https://github.com/sinemayk/playwright-pom) — Clean Implementation of Page Object Model
   
 ## License
 
