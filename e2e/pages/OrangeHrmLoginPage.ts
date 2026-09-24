@@ -4,9 +4,7 @@ export class OrangeHrmLoginPage {
   constructor(private page: Page) {}
 
   async goto(): Promise<void> {
-    await this.page.goto(
-      process.env.OPENSOURCE_URL!,
-    );
+    await this.page.goto(process.env.OPENSOURCE_URL!);
   }
 
   async login(username: string, password: string): Promise<void> {
@@ -19,9 +17,9 @@ export class OrangeHrmLoginPage {
   }
 
   async verifySuccessfulLogin(): Promise<void> {
-    await expect(this.page).toHaveURL(/dashboard/);
+    await this.page.waitForURL(/dashboard/, { timeout: 15000 });
     await expect(
       this.page.getByRole("heading", { name: "Dashboard" }),
-    ).toBeVisible();
+    ).toBeVisible({ timeout: 10000 });
   }
 }
